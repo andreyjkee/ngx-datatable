@@ -21,6 +21,7 @@ export class DataTableColumnDirective implements OnChanges {
   @Input() sortable: boolean;
   @Input() draggable: boolean;
   @Input() canAutoResize: boolean;
+  @Input() visible: boolean;
   @Input() minWidth: number;
   @Input() width: number;
   @Input() maxWidth: number;

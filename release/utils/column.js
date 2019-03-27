@@ -12,13 +12,13 @@ function columnsByPin(cols) {
     if (cols) {
         for (var _i = 0, cols_1 = cols; _i < cols_1.length; _i++) {
             var col = cols_1[_i];
-            if (col.frozenLeft) {
+            if (col.frozenLeft && col.visible) {
                 ret.left.push(col);
             }
-            else if (col.frozenRight) {
+            else if (col.frozenRight && col.visible) {
                 ret.right.push(col);
             }
-            else {
+            else if (col.visible) {
                 ret.center.push(col);
             }
         }
