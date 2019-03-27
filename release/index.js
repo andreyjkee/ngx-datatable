@@ -6316,6 +6316,10 @@ function setColumnDefaults(columns) {
         if (!column.$$valueGetter) {
             column.$$valueGetter = column_prop_getters_1.getterForProp(column.prop);
         }
+        // default column visibility state
+        if (!column.hasOwnProperty('visible')) {
+          column.visible = true;
+        }
         // format props if no name passed
         if (!isNullOrUndefined(column.prop) && isNullOrUndefined(column.name)) {
             column.name = camel_case_1.deCamelCase(String(column.prop));
@@ -6516,13 +6520,13 @@ function columnsByPin(cols) {
     if (cols) {
         for (var _i = 0, cols_1 = cols; _i < cols_1.length; _i++) {
             var col = cols_1[_i];
-            if (col.frozenLeft) {
+            if (col.frozenLeft && col.visible) {
                 ret.left.push(col);
             }
-            else if (col.frozenRight) {
+            else if (col.frozenRight && col.visible) {
                 ret.right.push(col);
             }
-            else {
+            else if (col.visible) {
                 ret.center.push(col);
             }
         }
