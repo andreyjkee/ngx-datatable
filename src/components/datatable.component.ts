@@ -923,10 +923,8 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
    */
   onBodyPage({ offset }: any): void {
 
-    // Avoid pagination caming from body events like scroll when the table 
-    // has no virtualization and the external paging is enable. 
-    // This means, let's the developer handle pagination by my him(her) self
-    if(this.externalPaging && !this.virtualization) {
+    // Avoid pagination coming from body events like scroll when the table has external paging enabled.
+    if(this.externalPaging) {
       return;
     }
 
