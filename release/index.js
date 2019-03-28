@@ -1,5 +1,5 @@
 /**
- * angular2-data-table v"14.0.1" (https://github.com/swimlane/angular2-data-table)
+ * angular2-data-table v"14.0.3" (https://github.com/swimlane/angular2-data-table)
  * Copyright 2016
  * Licensed under MIT
  */
@@ -2622,10 +2622,6 @@ var DataTableColumnDirective = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", Boolean)
     ], DataTableColumnDirective.prototype, "canAutoResize", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Boolean)
-    ], DataTableColumnDirective.prototype, "visible", void 0);
     __decorate([
         core_1.Input(),
         __metadata("design:type", Number)
@@ -6518,13 +6514,13 @@ function columnsByPin(cols) {
     if (cols) {
         for (var _i = 0, cols_1 = cols; _i < cols_1.length; _i++) {
             var col = cols_1[_i];
-            if (col.frozenLeft && col.visible) {
+            if (col.frozenLeft) {
                 ret.left.push(col);
             }
-            else if (col.frozenRight && col.visible) {
+            else if (col.frozenRight) {
                 ret.right.push(col);
             }
-            else if (col.visible) {
+            else {
                 ret.center.push(col);
             }
         }
