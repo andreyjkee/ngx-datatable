@@ -73,6 +73,10 @@ var DataTableColumnDirective = /** @class */ (function () {
     ], DataTableColumnDirective.prototype, "canAutoResize", void 0);
     __decorate([
         core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], DataTableColumnDirective.prototype, "visible", void 0);
+    __decorate([
+        core_1.Input(),
         __metadata("design:type", Number)
     ], DataTableColumnDirective.prototype, "minWidth", void 0);
     __decorate([
