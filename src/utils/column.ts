@@ -10,11 +10,11 @@ export function columnsByPin(cols: any[]) {
 
   if(cols) {
     for(const col of cols) {
-      if(col.frozenLeft) {
+      if(col.frozenLeft && col.visible) {
         ret.left.push(col);
-      } else if(col.frozenRight) {
+      } else if(col.frozenRight && col.visible) {
         ret.right.push(col);
-      } else {
+      } else if (col.visible) {
         ret.center.push(col);
       }
     }
