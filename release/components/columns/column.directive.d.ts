@@ -14,7 +14,6 @@ export declare class DataTableColumnDirective implements OnChanges {
     sortable: boolean;
     draggable: boolean;
     canAutoResize: boolean;
-    visible: boolean;
     minWidth: number;
     width: number;
     maxWidth: number;
