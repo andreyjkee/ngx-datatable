@@ -1,5 +1,13 @@
 # Changelog
 
+## 14.0.4
+
+- Transformation disabling for pinned column fix
+
+## 14.0.3
+
+- Disable event of page event when external paging enabled
+
 ## 14.0.0
 
 - Breaking: Upgrade to angular 7
