@@ -1,6 +1,6 @@
 {
   "name": "ngx-datatable-revived",
-  "version": "14.0.3",
+  "version": "14.0.4",
   "description": "ngx-datatable is a Angular table grid component for presenting large and complex data.",
   "main": "release/index.js",
   "typings": "release/index.d.ts",
@@ -51,9 +51,10 @@
     "url": "git+https://github.com/andreyjkee/ngx-datatable-revived.git"
   },
   "keywords": [
-    "angularjs",
     "angular",
     "javascript",
+    "typescript",
+    "ng",
     "angular2",
     "datatable",
     "grid",
@@ -64,7 +65,7 @@
   "bugs": {
     "url": "https://github.com/andreyjkee/ngx-datatable-revived/issues"
   },
-  "homepage": "https://github.com/swimlane/ngx-datatable#readme",
+  "homepage": "https://github.com/andreyjkee/ngx-datatable-revived#readme",
   "peerDependencies": {
     "@angular/common": "<8.0.0",
     "@angular/compiler": "<8.0.0",
