@@ -67,7 +67,7 @@ var DataTableRowWrapperComponent = /** @class */ (function () {
     };
     DataTableRowWrapperComponent.prototype.getGroupHeaderStyle = function () {
         var styles = {};
-        // styles['transform'] = 'translate3d(' + this.offsetX + 'px, 0px, 0px)';
+        styles['transform'] = 'translate3d(' + this.offsetX + 'px, 0px, 0px)';
         styles['backface-visibility'] = 'hidden';
         styles['width'] = this.innerWidth;
         return styles;

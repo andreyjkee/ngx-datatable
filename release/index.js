@@ -1,5 +1,5 @@
 /**
- * angular2-data-table v"14.0.3" (https://github.com/swimlane/angular2-data-table)
+ * angular2-data-table v"14.0.4" (https://github.com/swimlane/angular2-data-table)
  * Copyright 2016
  * Licensed under MIT
  */
@@ -874,7 +874,7 @@ var DataTableRowWrapperComponent = /** @class */ (function () {
     };
     DataTableRowWrapperComponent.prototype.getGroupHeaderStyle = function () {
         var styles = {};
-        // styles['transform'] = 'translate3d(' + this.offsetX + 'px, 0px, 0px)';
+        styles['transform'] = 'translate3d(' + this.offsetX + 'px, 0px, 0px)';
         styles['backface-visibility'] = 'hidden';
         styles['width'] = this.innerWidth;
         return styles;
@@ -1395,9 +1395,9 @@ var DataTableBodyComponent = /** @class */ (function () {
          * calculate scroll height automatically (as height will be undefined).
          */
         get: function () {
-            // if (this.scrollbarV && this.virtualization && this.rowCount) {
-            //   return this.rowHeightsCache.query(this.rowCount - 1);
-            // }
+            if (this.scrollbarV && this.virtualization && this.rowCount) {
+                return this.rowHeightsCache.query(this.rowCount - 1);
+            }
             // avoid TS7030: Not all code paths return a value.
             return undefined;
         },
@@ -7318,6 +7318,7 @@ exports.throttleable = throttleable;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var prefixes_1 = __webpack_require__("./src/utils/prefixes.ts");
+var camel_case_1 = __webpack_require__("./src/utils/camel-case.ts");
 // browser detection and prefixing tools
 var transform = typeof window !== 'undefined' ? prefixes_1.getVendorPrefixedName('transform') : undefined;
 var backfaceVisibility = typeof window !== 'undefined' ? prefixes_1.getVendorPrefixedName('backfaceVisibility') : undefined;
@@ -7327,12 +7328,13 @@ var ua = typeof window !== 'undefined' ? window.navigator.userAgent : 'Chrome';
 var isSafari = (/Safari\//).test(ua) && !(/Chrome\//).test(ua);
 function translateXY(styles, x, y) {
     if (typeof transform !== 'undefined' && hasCSSTransforms) {
-        // if (!isSafari && hasCSS3DTransforms) {
-        //   styles[transform] = `translate3d(${x}px, ${y}px, 0)`;
-        //   styles[backfaceVisibility] = 'hidden';
-        // } else {
-        //   styles[camelCase(transform)] = `translate(${x}px, ${y}px)`;
-        // }
+        if (!isSafari && hasCSS3DTransforms) {
+            styles[transform] = "translate3d(" + x + "px, " + y + "px, 0)";
+            styles[backfaceVisibility] = 'hidden';
+        }
+        else {
+            styles[camel_case_1.camelCase(transform)] = "translate(" + x + "px, " + y + "px)";
+        }
     }
     else {
         styles.top = y + "px";

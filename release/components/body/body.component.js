@@ -156,9 +156,9 @@ var DataTableBodyComponent = /** @class */ (function () {
          * calculate scroll height automatically (as height will be undefined).
          */
         get: function () {
-            // if (this.scrollbarV && this.virtualization && this.rowCount) {
-            //   return this.rowHeightsCache.query(this.rowCount - 1);
-            // }
+            if (this.scrollbarV && this.virtualization && this.rowCount) {
+                return this.rowHeightsCache.query(this.rowCount - 1);
+            }
             // avoid TS7030: Not all code paths return a value.
             return undefined;
         },
