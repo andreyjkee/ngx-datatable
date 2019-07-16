@@ -1,12 +1,18 @@
 # Changelog
 
-## 14.0.4
+## 15.0.2
 
-- Transformation disabling for pinned column fix
+- Fix: Fixes issue where footer pagination does not work when virtual scrolling is enabled (#1704)
 
-## 14.0.3
+## 15.0.1
 
-- Disable event of page event when external paging enabled
+- Fix: Fixes issue where using conditional templates would not render them (#1701)
+
+## 15.0.0
+
+- Breaking: Upgrade to angular 8 (#1697)
+- Fix: Module not found: Error: Can't resolve '.' (#1646)
+- Fix: trackByProp can't work. (#1622)
 
 ## 14.0.0
 
